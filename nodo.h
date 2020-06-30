@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-typedef Figura* Dato;
+typedef String* Dato;
 
 
 class Nodo{
@@ -34,7 +34,7 @@ class Nodo{
          /*
          metodo establecer_siguiente
          PRE: el nodo fue creado
-         POST: el puntero al siguiente nodo apuntar· a psig
+         POST: el puntero al siguiente nodo apuntar√° a psig
          */
          void establecer_siguiente(Nodo* ps);
          /*
