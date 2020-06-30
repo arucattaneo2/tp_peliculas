@@ -1,0 +1,35 @@
+El padrino
+Policial
+6
+Francis Ford Coppola
+Al Pacino, James Caan, Marlon Brando, Robert Duvall
+
+Titanic
+Drama
+8
+James Cameron
+Kate Winslet, Leonardo Di Caprio, Billy Zane, Bill Paxton
+
+Los ángeles de Charlie
+Acción
+7
+Joseph McGinty Nichol
+Drew Barrymore, Lucy Liu, Cameron Diaz, Bill Murray
+
+El conjuro
+Terror
+4
+James Wan
+Vera Farmiga, Patrick Wilson, Ron Livingston, Lili Taylor
+
+Contratiempo
+Suspenso
+10
+Oriol Paulo
+Mario Casas, Ana Wagener, Barbara Lennie, Jose Coronado
+
+El Cuerpo
+Misterio
+9
+Oriol Paulo
+Belén Rueda, Aura Garrido, Hugo Silva, Jose Coronado
