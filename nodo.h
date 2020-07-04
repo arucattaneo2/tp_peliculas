@@ -1,10 +1,7 @@
 #ifndef NODO_H
 #define NODO_H
 
-#include "pelicula.h"
-
-typedef Pelicula Dato;
-
+template<class Dato>
 class Nodo {
 
 private:
@@ -45,7 +42,34 @@ public:
     PRE: el nodo fue creado
     POST: Devuelve el puntero al siguiente nodo
     */
-    Nodo *obtener_siguiente();
+    Nodo<Dato> *obtener_siguiente();
 };
+
+template<class Dato>
+Nodo<Dato>::Nodo(Dato d) {
+    dato = d;
+    psig = nullptr;
+}
+
+template<class Dato>
+void Nodo<Dato>::establecer_dato(Dato d) {
+    dato = d;
+}
+
+template<class Dato>
+Dato Nodo<Dato>::obtener_dato() {
+    return dato;
+}
+
+template<class Dato>
+void Nodo<Dato>::establecer_siguiente(Nodo *ps) {
+    psig = ps;
+}
+
+template<class Dato>
+Nodo<Dato> *Nodo<Dato>::obtener_siguiente() {
+    return psig;
+}
+
 
 #endif //NODO_H

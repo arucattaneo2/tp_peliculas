@@ -3,10 +3,11 @@
 
 #include "nodo.h"
 
+template<class Dato>
 class Lista {
 
 private:
-    Nodo *primero;
+    Nodo<Dato> *primero;
     unsigned tamanio;
 
 public:
@@ -62,8 +63,74 @@ public:
 private:
     // PRE: 0 < pos <= tam
     // POST: devuelve un puntero al nodo
-    Nodo *obtener_nodo(unsigned pos);
+    Nodo<Dato> *obtener_nodo(unsigned pos);
 
 };
+
+template<class Dato>
+Lista<Dato>::Lista() {
+    primero = nullptr;
+    tamanio = 0;
+}
+
+template<class Dato>
+void Lista<Dato>::alta(Dato f) {
+    Nodo<Dato> *pnodo = new Nodo<Dato>(f);
+    Nodo<Dato> *paux = primero;
+    while (paux->obtener_siguiente() != nullptr) {
+        paux = paux->obtener_siguiente();
+    }
+    paux->establecer_siguiente(pnodo);
+    tamanio++;
+}
+
+template<class Dato>
+Dato Lista<Dato>::obtener_dato(unsigned pos) {
+    return obtener_nodo(pos)->obtener_dato();
+}
+
+template<class Dato>
+void Lista<Dato>::baja(unsigned pos) {
+    Nodo<Dato> *paux = primero;
+    if (pos == 1) {
+        primero = paux->obtener_siguiente();
+    } else {
+        Nodo<Dato> *pant = obtener_nodo(pos - 1);
+        paux = pant->obtener_siguiente();
+        pant->establecer_siguiente(paux->obtener_siguiente());
+    }
+    //delete paux->obtener_dato(); todo: después ver si hace falta
+    delete paux;
+    tamanio--;
+}
+
+template<class Dato>
+unsigned Lista<Dato>::obtener_tamanio() {
+    return tamanio;
+}
+
+template<class Dato>
+Nodo<Dato> *Lista<Dato>::obtener_nodo(unsigned pos) {
+    Nodo<Dato> *aux = primero;
+    unsigned i = 1;
+    while (i < pos) {
+        aux = aux->obtener_siguiente();
+        i++;
+    }
+    return aux;
+}
+
+template<class Dato>
+bool Lista<Dato>::lista_vacia() {
+    return (primero == nullptr);
+}
+
+template<class Dato>
+Lista<Dato>::~Lista() {
+    while (!(lista_vacia())) {
+        baja(1);
+    }
+}
+
 
 #endif //LISTA_H
