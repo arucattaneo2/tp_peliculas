@@ -1,35 +1,35 @@
-El padrino
+El_padrino
 Policial
 6
-Francis Ford Coppola
-Al Pacino, James Caan, Marlon Brando, Robert Duvall
+Francis_Ford_Coppola
+Al_Pacino James_Caan Marlon_Brando Robert_Duvall
 
 Titanic
 Drama
 8
-James Cameron
-Kate Winslet, Leonardo Di Caprio, Billy Zane, Bill Paxton
+James_Cameron
+Kate_Winslet Leonardo_DiCaprio Billy_Zane Bill_Paxton
 
-Los ángeles de Charlie
+Los_ángeles_de_Charlie
 Acción
 7
-Joseph McGinty Nichol
-Drew Barrymore, Lucy Liu, Cameron Diaz, Bill Murray
+Joseph_McGinty Nichol
+Drew_Barrymore Lucy_Liu Cameron_Diaz Bill_Murray
 
-El conjuro
+El_conjuro
 Terror
 4
-James Wan
-Vera Farmiga, Patrick Wilson, Ron Livingston, Lili Taylor
+James_Wan
+Vera_Farmiga Patrick_Wilson Ron_Livingston Lili_Taylor
 
 Contratiempo
 Suspenso
 10
-Oriol Paulo
-Mario Casas, Ana Wagener, Barbara Lennie, Jose Coronado
+Oriol_Paulo
+Mario_Casas Ana_Wagener Barbara_Lennie Jose_Coronado
 
-El Cuerpo
+El_Cuerpo
 Misterio
 9
-Oriol Paulo
-Belén Rueda, Aura Garrido, Hugo Silva, Jose Coronado
+Oriol_Paulo
+Belén_Rueda Aura_Garrido Hugo_Silva Jose_Coronado
