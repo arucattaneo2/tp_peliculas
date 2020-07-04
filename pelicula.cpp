@@ -12,7 +12,7 @@ Pelicula::Pelicula(string nombre, string genero, string director, int puntaje){
 }
 
 void Pelicula::agregar_actor_o_actriz(string nombre_actor_o_actriz){
-	elenco->insertar(nombre_actor_o_actriz);
+	elenco->alta(nombre_actor_o_actriz);
 }
 
 string Pelicula::obtener_nombre(){
