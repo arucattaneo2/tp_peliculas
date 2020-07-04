@@ -1,14 +1,12 @@
-#include <iostream>
 #include "nodo.h"
 
 Nodo::Nodo(Dato d){
     dato = d;
-    psig = 0;
+    psig = nullptr;
 }
 
-void Nodo::establecer_dato(Dato f){
-    dato = f;
-    cout<<dato<<endl;
+void Nodo::establecer_dato(Dato d){
+    dato = d;
 }
 
 Dato Nodo::obtener_dato(){
@@ -21,8 +19,4 @@ void Nodo::establecer_siguiente(Nodo* ps){
 
 Nodo* Nodo::obtener_siguiente(){
     return psig;
-}
-
-Nodo::~Nodo(){
-    delete dato;
 }
