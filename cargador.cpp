@@ -15,11 +15,11 @@ Cargador::~Cargador() {
 }
 
 
-void Cargador::cargar_datos(ifstream archivo) {
+void Cargador::cargar_datos(ifstream archivo) { // carga los datos leidos del archivo en variables declaradas y luego a listas con el empleo del metodo 
 
-    string nombre, genero, director, actores;
+    string nombre, genero, director, actores; // variables que almacenaran informacion de cada pelicula
     int puntaje;
-    unsigned posicion = 1;
+    unsigned posicion = 1; //variable que será utilizada en la creación de la lista, identificando en ella las posiciones de cada nodo
 
     verificar_existencia(archivo);
 
