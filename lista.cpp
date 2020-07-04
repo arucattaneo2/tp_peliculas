@@ -21,8 +21,7 @@ Dato Lista::obtener_dato(unsigned pos) {
 
 void Lista::baja(unsigned pos) {
     Nodo *paux = primero;
-    //Idem condición del while
-    if (pos == 1 || !(primero->obtener_siguiente())) {
+    if (pos == 1) {
         primero = paux->obtener_siguiente();
     } else {
         Nodo *pant = obtener_nodo(pos - 1);
