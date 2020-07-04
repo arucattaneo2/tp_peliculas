@@ -16,14 +16,7 @@ void Lista::alta(Dato f) {
 }
 
 Dato Lista::obtener_dato(unsigned pos) {
-    Nodo *paux = primero;
-    unsigned i = 1;
-    //Para qué está esto "paux->obtener_siguiente()" en el while?
-    while (i < pos && paux->obtener_siguiente()) {
-        paux = paux->obtener_siguiente();
-        i++;
-    }
-    return paux->obtener_dato();
+    return obtener_nodo(pos)->obtener_dato();
 }
 
 void Lista::baja(unsigned pos) {
