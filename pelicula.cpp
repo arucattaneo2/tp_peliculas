@@ -12,7 +12,7 @@ Pelicula::Pelicula(string nombre, string genero, string director, int puntaje){
 }
 
 void Pelicula::agregar_actor_o_actriz(string nombre_actor_o_actriz){
-	elenco.insertar(nombre_actor_o_actriz);
+	elenco->insertar(nombre_actor_o_actriz);
 }
 
 string Pelicula::obtener_nombre(){
@@ -36,7 +36,7 @@ Lista<string>* Pelicula::obtener_elenco(){
 }
 
 int Pelicula::cantidad_actores(){
-	return elenco.obtener_tamanio();
+	return elenco->obtener_tamanio();
 }
 
 void Pelicula::mostrar_pelicula(){
@@ -46,8 +46,8 @@ void Pelicula::mostrar_pelicula(){
 	cout << "Director/a: " << director << endl;
 	cout << "Puntaje: " << puntaje << endl;
 	cout << "Elenco: " << endl;
-	for (int i = 0; i <= elenco.obtener_tamanio(); i++){
-		cout <<'\n' << *(elenco.obtener_dato(i)) << endl;
+	for (int i = 0; i <= elenco->obtener_tamanio(); i++){
+		cout <<'\n' << *(elenco->obtener_dato(i)) << endl;
 	}
 	cout << "#############################################################" << endl;
 }
