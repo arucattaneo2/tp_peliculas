@@ -1,24 +1,29 @@
-Bad Boys for Life
+Bad_Boys_for_Life
 Acción
-Bilall Fallah
-Will Smith, Martin Lawrence, Vanessa Hudgens, Alexander Ludwig
+8
+Bilall_Fallah
+Will_Smith Martin_Lawrence Vanessa_Hudgens, Alexander_Ludwig
 
-Sonic: la película
+Sonic_la_película
 Comedia
-Jeff Fowler
-Jim Carrey, James Mardsen, Neal McDonough, Tom Buttler
+6
+Jeff_Fowler
+Jim_Carrey James_Mardsen Neal_McDonough Tom_Buttler
 
-Gretel y Hansel
+Gretel_y_Hansel
 Fantasía
-Oz Perkins
-Sophia Lillis, Jessica De Gouw, Alice Krige, Charles Babalola
+5
+Oz_Perkins
+Sophia_Lillis Jessica_De_Gouw Alice_Krige Charles_Babalola
 
-Wonder Woman 2
+Wonder_Woman_2
 Aventura
-Patty Jenkins
-Gal Gadot, Chris Pine, Kristen Wiig, Pedro Pascal
+7
+Patty_Jenkins
+Gal_Gadot Chris_Pine Kristen_Wiig Pedro_Pascal
 
-Aves de presa
+Aves_de_presa
 Acción
-Cathy Yan
-Margot Robbie, Jurnee Smollet-Bell, Ewan McGregor, Mary Elizabeth Winstead
+4
+Cathy_Yan
+Margot_Robbie Jurnee_Smollet-Bell Ewan_McGregor Mary_Elizabeth_Winstead
