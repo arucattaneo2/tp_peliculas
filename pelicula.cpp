@@ -1,10 +1,5 @@
 #include <iostream>
-#include <string>
 #include "pelicula.h"
-#include "lista.h"
-
-using namespace std;
-
 
 Pelicula::Pelicula(string nombre, string genero, string director, unsigned puntaje){
 	this->nombre = nombre;

@@ -19,10 +19,10 @@ class Interfaz{
 	//POST: destruye un ojeto de tipo Menu
 	~Interfaz();
 	
-    	//permite seleccionar una opcion
+	//permite seleccionar una opcion
 	//PRE: Menu creado
 	//POST: propone al usuario una serie de opciones de menu, e inicia las operaciones necesarias para la concrecion de cada una
-    	void selec_opcion();
+	void selec_opcion();
     
   	//muestra una lista completa
  	//PRE: existencia de una lista
