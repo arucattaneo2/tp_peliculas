@@ -76,11 +76,16 @@ Lista<Dato>::Lista() {
 template<class Dato>
 void Lista<Dato>::alta(Dato f) {
     Nodo<Dato> *pnodo = new Nodo<Dato>(f);
-    Nodo<Dato> *paux = primero;
-    while (paux->obtener_siguiente() != nullptr) {
-        paux = paux->obtener_siguiente();
+
+    if (this->lista_vacia()) {
+        primero = pnodo;
     }
-    paux->establecer_siguiente(pnodo);
+    else {
+        Nodo<Dato> *paux = obtener_nodo(tamanio);
+        pnodo->establecer_siguiente(paux->obtener_siguiente());
+        paux->establecer_siguiente(pnodo);
+    }
+
     tamanio++;
 }
 
