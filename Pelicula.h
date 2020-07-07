@@ -2,7 +2,7 @@
 #define PELICULA_H
 
 #include <string>
-#include "lista.h"
+#include "Lista.h"
 
 using namespace std;
 

@@ -1,6 +1,6 @@
 
 
-#include "inexistente.h"
+#include "Inexistente.h"
 
 
 Archivo_inexistente::Archivo_inexistente() {

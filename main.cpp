@@ -1,5 +1,5 @@
-#include "lista.h"
-#include "pelicula.h"
+#include "Lista.h"
+#include "Pelicula.h"
 
 
 int main(){

@@ -1,7 +1,7 @@
 
-#include "cargador.h"
+#include "Cargador.h"
 #include <iostream>
-#include "excepcion.h"
+#include "Excepcion.h"
 
 Cargador::Cargador() {
 

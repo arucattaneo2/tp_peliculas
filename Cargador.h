@@ -3,8 +3,8 @@
 #ifndef CARGADOR_H
 #define CARGADOR_H
 
-#include "lista.h"
-#include "pelicula.h"
+#include "Lista.h"
+#include "Pelicula.h"
 #include <string>
 #include <fstream>
 

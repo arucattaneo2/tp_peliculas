@@ -1,5 +1,5 @@
 #include <iostream>
-#include "pelicula.h"
+#include "Pelicula.h"
 
 Pelicula::Pelicula(string nombre, string genero, string director, unsigned puntaje){
 	this->nombre = nombre;

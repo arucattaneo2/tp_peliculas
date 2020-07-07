@@ -1,8 +1,8 @@
 #ifndef INTERFAZ_H
 #define ITERFAZ_H
 
-#include "lista.h"
-#include "pelicula.h"
+#include "Lista.h"
+#include "Pelicula.h"
 
 class Interfaz{
   private:
