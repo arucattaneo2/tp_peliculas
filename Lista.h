@@ -79,8 +79,7 @@ void Lista<Dato>::alta(Dato f) {
 
     if (this->lista_vacia()) {
         primero = pnodo;
-    }
-    else {
+    } else {
         Nodo<Dato> *paux = obtener_nodo(tamanio);
         pnodo->establecer_siguiente(paux->obtener_siguiente());
         paux->establecer_siguiente(pnodo);
