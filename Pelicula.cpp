@@ -44,9 +44,11 @@ void Pelicula::mostrar_pelicula(){
 	cout << "Director/a: " << director << endl;
 	cout << "Puntaje: " << puntaje << endl;
 	cout << "Elenco: " << endl;
-	for (int i = 0; i <= elenco->obtener_tamanio(); i++){
+
+	for (int i = 1; i <= elenco->obtener_tamanio(); i++){
 		cout <<'\n' << (elenco->obtener_dato(i)) << endl;
 	}
+
 	cout << "#############################################################" << endl;
 }
 
