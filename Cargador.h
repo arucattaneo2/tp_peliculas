@@ -1,7 +1,7 @@
 
 
-#ifndef CARGADOR_H
-#define CARGADOR_H
+#ifndef CARGADOR_H_
+#define CARGADOR_H_
 
 #include "Lista.h"
 #include "Pelicula.h"
@@ -10,19 +10,29 @@
 
 class Cargador{
 
-    Lista<Pelicula> l_peliculas;
-    Lista<string> l_actores;
+    Lista<Pelicula*> l_peliculas;
+
 
 public:
-
+    //Constructor
     Cargador();
+    //Destructor
     ~Cargador();
-    void cargar_datos(ifstream archivo);
-    void cargar_l_peliculas(string nombre, string genero, string director, int puntaje, int posicion);
-    void cargar_l_actores(ifstream);
-    Lista<Pelicula> obtener_l_peliculas();
-    Lista<string> obtener_l_actores();
-    void verificar_existencia(ifstream archivo);
+    //PRE:-
+    //POS: Lee el archivo y carga la lista o lanza una excepcion dependiendo del estado del archivo
+    void cargar_datos(string);
+    //PRE:-
+    //POS: Carga la lista l_peliculas
+    void cargar_l_peliculas(string, string, string, unsigned, Lista<string>);
+    //PRE:-
+    //POS: Carga la lista l_actores
+    Lista<string> cargar_l_actores(ifstream&);
+    //PRE:-
+    //POS: Devuelve l_peliculas
+    Lista<Pelicula*> obtener_l_peliculas();
+    //PRE:-
+    //POS: Lanza un expcecion por pantalla que la memoria fue liberada correctamente
+    void verificar_memoria_liberada();
 
 };
 

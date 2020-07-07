@@ -1,82 +1,91 @@
 
 #include "Cargador.h"
 #include <iostream>
-#include "Excepcion.h"
+#include "Memoria_liberada.h"
 
 Cargador::Cargador() {
 
-    l_peliculas = 0;
-    l_actores = 0;
+    l_peliculas;
 }
+
 
 Cargador::~Cargador() {
 
+   
 
 }
 
 
-void Cargador::cargar_datos(ifstream archivo) { // carga los datos leidos del archivo en variables declaradas y luego a listas con el empleo del metodo 
+void Cargador::cargar_datos(string nombre_archivo) {
 
-    string nombre, genero, director, actores; // variables que almacenaran informacion de cada pelicula
-    int puntaje;
-    unsigned posicion = 1; //variable que será utilizada en la creación de la lista, identificando en ella las posiciones de cada nodo
+    ifstream archivo(nombre_archivo);
+    string nombre, genero, director;
+    Lista<string> elenco;
+    unsigned puntaje;
 
-    verificar_existencia(archivo);
 
-    if(archivo.fail())
+    if(!archivo && nombre_archivo == "peliculas_no_vistas.txt") {
+        verificar_memoria_liberada();
+    }
+    else if(archivo.fail())
         cout << "Error no se pudo abrir el archivo" << endl;
-    while(archivo >> nombre) {
-        archivo >> genero;
-        archivo >> director;
-        archivo >> puntaje;
-        cargar_l_actores(archivo);
-        cargar_l_peliculas(nombre, genero, director, puntaje, posicion);
-        posicion++;
+    else{
+        while(archivo >> nombre) {
+            archivo >> genero;
+            archivo >> puntaje;
+            archivo >> director;
+            elenco = cargar_l_actores(archivo);
+            cargar_l_peliculas(nombre, genero, director, puntaje, elenco);
+
+        }
+        archivo.close();
     }
-    archivo.close();
+
+
 
 }
 
-void Cargador::cargar_l_peliculas(string nombre, string genero, string dire, int puntaje, int pos) {
+void Cargador::cargar_l_peliculas(string nombre, string genero, string director, unsigned puntos, Lista<string> elenco) {
 
-    Pelicula *ptrpelicula = new Pelicula(nombre, genero, puntaje, dire, l_actores);
-    l_peliculas.alta(ptrpelicula, pos);
+    Pelicula *pelicula = new Pelicula(nombre, genero, director, puntos, elenco);
+    l_peliculas.alta(pelicula);
 
 }
 
 
-void Cargador::cargar_l_actores(ifstream archivo) {
+Lista<string> Cargador::cargar_l_actores(ifstream &archivo) {
 
-    int contador = 0;
     string actores;
-    while(getline(archivo, actores, ' ')) {
-        l_actores.alta(actores, contador);
-        contador++;
+    Lista<string> l_actores;
+    while(archivo >> actores && archivo.get()!= '\n'){
+        cout << actores << endl;
+        l_actores.alta(actores);
+
     }
+
+    return l_actores;
+
 }
 
 
-Lista<Pelicula> Cargador::obtener_l_peliculas() {
+Lista<Pelicula*> Cargador::obtener_l_peliculas() {
 
     return l_peliculas;
 }
 
-Lista<string> Cargador::obtener_l_actores() {
-
-    return l_actores;
-}
 
 
-void Cargador::verificar_existencia(ifstream nombre_archivo) {
+
+void Cargador::verificar_memoria_liberada() {
 
     try {
-
-        if (!nombre_archivo)
-            throw archivo_inexistente;
+        throw memoria_liberada;
     }
-    catch (const exception& e) {
+    catch (exception& e) {
 
-        cout << e.what() << endl;
+        cout << e.what() << '\n';
+
+
     }
 
 }
