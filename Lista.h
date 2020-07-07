@@ -42,7 +42,7 @@ public:
     /*
     metodo baja
     PRE: la lista fue creada
-    POST: libera el nodo que esta en la posiciÛn pos
+    POST: libera el nodo que esta en la posici√≥n pos
     */
     void baja(unsigned pos);
 
@@ -99,7 +99,7 @@ void Lista<Dato>::baja(unsigned pos) {
         paux = pant->obtener_siguiente();
         pant->establecer_siguiente(paux->obtener_siguiente());
     }
-    //delete paux->obtener_dato(); todo: despuÈs ver si hace falta
+    //delete paux->obtener_dato(); todo: despu√©s ver si hace falta
     delete paux;
     tamanio--;
 }
