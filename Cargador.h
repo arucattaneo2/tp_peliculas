@@ -26,11 +26,11 @@ public:
 
     //PRE:-
     //POS: Carga la lista l_peliculas
-    void cargar_l_peliculas(string, string, string, unsigned, Lista<string>);
+    void cargar_l_peliculas(string, string, string, unsigned, Lista<string>*);
 
     //PRE:-
     //POS: Carga la lista l_actores
-    Lista<string> cargar_l_actores(ifstream &);
+    Lista<string>* cargar_l_actores(ifstream &);
 
     //PRE:-
     //POS: Devuelve l_peliculas

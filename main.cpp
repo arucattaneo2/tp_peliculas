@@ -1,9 +1,14 @@
-#include "Lista.h"
-#include "Pelicula.h"
 
+
+#include "Cargador.h"
+
+using namespace std;
 
 int main(){
-    Pelicula *p = new Pelicula("The Room", "Drama", "Tommy Wiseau", 10);
+
+    Cargador carga;
+    carga.cargar_datos("peliculas_no_vistas.txt");
+    /*Pelicula *p = new Pelicula("The Room", "Drama", "Tommy Wiseau", 10);
     //Pelicula q("The Lobster", "Drama", "kcyo", 8);
     Lista<Pelicula*> peliculas;
     peliculas.alta(p);
@@ -14,6 +19,6 @@ int main(){
     peliculas.baja(1);
     peliculas.obtener_dato(1).mostrar_pelicula();
     */
-    delete p;
-     return 0;
+    //delete p;
+    return 0;
 }

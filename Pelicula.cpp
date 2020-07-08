@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Pelicula.h"
 
-Pelicula::Pelicula(string nombre, string genero, string director, unsigned puntaje, Lista<string> elenco) {
+Pelicula::Pelicula(string nombre, string genero, string director, unsigned puntaje, Lista<string> *elenco) {
     this->nombre = nombre;
     this->genero = genero;
     this->director = director;
@@ -30,12 +30,12 @@ unsigned Pelicula::obtener_puntaje() {
     return puntaje;
 }
 
-Lista<string> Pelicula::obtener_elenco() {
+Lista<string>* Pelicula::obtener_elenco() {
     return elenco;
 }
 
 unsigned Pelicula::cantidad_actores() {
-    return elenco.obtener_tamanio();
+    return elenco->obtener_tamanio();
 }
 
 void Pelicula::mostrar_pelicula() {
@@ -46,8 +46,8 @@ void Pelicula::mostrar_pelicula() {
     cout << "Puntaje: " << puntaje << endl;
     cout << "Elenco: " << endl;
 
-    for (int i = 1; i <= elenco.obtener_tamanio(); i++) {
-        cout << '\n' << (elenco.obtener_dato(i)) << endl;
+    for (int i = 1; i <= elenco->obtener_tamanio(); i++) {
+        cout << '\n' << (elenco->obtener_dato(i)) << endl;
     }
 
     cout << "#############################################################" << endl;

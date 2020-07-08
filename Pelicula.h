@@ -16,7 +16,7 @@ private:
     string genero;
     string director;
     unsigned puntaje;
-    Lista<string> elenco;
+    Lista<string> *elenco;
 
 public:
 
@@ -25,7 +25,7 @@ public:
     PRE: ---
     POST: crea un objeto de tipo Pelicula
     */
-    Pelicula(string nombre, string genero, string director, unsigned puntaje, Lista<string> elenco);
+    Pelicula(string nombre, string genero, string director, unsigned puntaje, Lista<string> *elenco);
 
     /*
     metodo agregar_actor_o_actriz
@@ -68,7 +68,7 @@ public:
     PRE: ---
     POST: muestra por pantalla el listado del elenco
     */
-    Lista<string> obtener_elenco();
+    Lista<string>* obtener_elenco();
 
     /*
     metodo cantidad_actores

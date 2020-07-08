@@ -19,7 +19,7 @@ void Cargador::cargar_datos(string nombre_archivo) {
 
     ifstream archivo(nombre_archivo);
     string nombre, genero, director;
-    Lista<string> elenco;
+    Lista<string> *elenco;
     unsigned puntaje;
 
 
@@ -42,22 +42,21 @@ void Cargador::cargar_datos(string nombre_archivo) {
 
 }
 
-void
-Cargador::cargar_l_peliculas(string nombre, string genero, string director, unsigned puntos, Lista<string> elenco) {
+void Cargador::cargar_l_peliculas(string nom, string gen, string dire, unsigned pun, Lista<string>* elen) {
 
-    Pelicula *pelicula = new Pelicula(nombre, genero, director, puntos, elenco);
+    Pelicula *pelicula = new Pelicula(nom, gen, dire, pun, elen);
     l_peliculas.alta(pelicula);
 
 }
 
 
-Lista<string> Cargador::cargar_l_actores(ifstream &archivo) {
+Lista<string>* Cargador::cargar_l_actores(ifstream &archivo) {
 
     string actores;
-    Lista<string> l_actores;
+    Lista<string> *l_actores = new Lista<string>;
     while (archivo >> actores && archivo.get() != '\n') {
         cout << actores << endl;
-        l_actores.alta(actores);
+        l_actores->alta(actores);
 
     }
 
