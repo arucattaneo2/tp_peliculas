@@ -25,7 +25,8 @@ void Cargador::cargar_datos(string nombre_archivo) {
 
     if (!archivo && nombre_archivo == "peliculas_no_vistas.txt") {
         verificar_memoria_liberada();
-    } else if (archivo.fail())
+    }
+    else if (archivo.fail())
         cout << "Error no se pudo abrir el archivo" << endl;
     else {
         while (archivo >> nombre) {
@@ -42,9 +43,9 @@ void Cargador::cargar_datos(string nombre_archivo) {
 
 }
 
-void Cargador::cargar_l_peliculas(string nom, string gen, string dire, unsigned pun, Lista<string>* elen) {
+void Cargador::cargar_l_peliculas(string nombre, string genero, string director, unsigned pnt, Lista<string>* elen) {
 
-    Pelicula *pelicula = new Pelicula(nom, gen, dire, pun, elen);
+    Pelicula *pelicula = new Pelicula(nombre, genero, director, pnt, elen);
     l_peliculas.alta(pelicula);
 
 }
@@ -54,11 +55,13 @@ Lista<string>* Cargador::cargar_l_actores(ifstream &archivo) {
 
     string actores;
     Lista<string> *l_actores = new Lista<string>;
-    while (archivo >> actores && archivo.get() != '\n') {
-        cout << actores << endl;
-        l_actores->alta(actores);
 
+    while(archivo >> actores && archivo.get() != '\n'){
+        l_actores->alta(actores);
+ 
     }
+    l_actores->alta(actores);
+   
 
     return l_actores;
 
