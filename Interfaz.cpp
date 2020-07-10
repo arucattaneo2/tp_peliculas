@@ -9,7 +9,7 @@
 
  }
 
-void Menu::selec_opcion(carg_vistas, carg_no_vistas, recomendeichons){
+void Interfaz::selec_opcion(carg_vistas, carg_no_vistas, recomendeichons){
  	// Presentacion del menu de opciones
 	cout<<endl<<"Selecciona una opcion correspondiente a una de las siguientes alternativas: "<<endl;
 	cout<<"1.- Mostrar las peliculas vistas"<<endl;
@@ -35,8 +35,17 @@ void Menu::selec_opcion(carg_vistas, carg_no_vistas, recomendeichons){
  }
 
 
- void Menu::mostrar(cargadore){
+ void Interfaz::mostrar_1(cargadore){
  	Lista <Pelicula *> lista_pelis = cargador.obtener_l_peliculas();
+ 	for(int i=1;i<=(lista_pelis.get_tam());i++){
+		// le paso al mismo puntero que estaba usando la direccion del objeto en memoria
+		puntPeli=lista_pelis.get_dato(i);
+		puntPeli->mostrar_pelicula();
+	}
+ }
+
+ void Interfaz::mostrar_2(recomendador){
+ 	Lista <Pelicula *> lista_pelis = recomendador.obtener_l_recomendaciones();
  	for(int i=1;i<=(lista_pelis.get_tam());i++){
 		// le paso al mismo puntero que estaba usando la direccion del objeto en memoria
 		puntPeli=lista_pelis.get_dato(i);
