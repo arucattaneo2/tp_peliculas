@@ -16,7 +16,7 @@ class Recomendaciones {
 
 public:
     //Constructor
-    Recomendaciones(Cargador, Cargador);
+    Recomendaciones(Cargador);
     //Destructor
     ~Recomendaciones();
 

@@ -2,10 +2,10 @@
 #include "Recomendacion.h"
 #include "Cargador.h"
 
-Recomendaciones::Recomendaciones(Cargador carg_vistas, Cargador carg_vistas) {
+Recomendaciones::Recomendaciones(Cargador carga) {
     l_recomendaciones;
-    Lista <Pelicula *> lista_vistas = carg_vistas.obtener_l_peliculas(); // obtengo lista vistas
-	Lista <Pelicula *> lista_no_vistas = carg_no_vistas.obtener_l_peliculas(); // obtengo lista no vistas
+    Lista <Pelicula *> l_vistas = carga.obtener_peliculas_vistas(); // obtengo lista vistas
+	Lista <Pelicula *> l_no_vistas = carga.obtener_peliculas_no_vistas(); // obtengo lista no vistas
 	Pelicula* vista;
 	Pelicula* no_vista;
 }
