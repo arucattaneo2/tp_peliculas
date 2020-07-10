@@ -9,10 +9,14 @@
 class Recomendaciones {
 
     Lista<Pelicula*> l_recomendaciones;
+    Lista<Pelicula*> l_vistas;
+    Lista<Pelicula*> l_no_vistas;
+    Pelicula* vista;
+    Pelicula* no_vista;
 
 public:
     //Constructor
-    Recomendaciones();
+    Recomendaciones(Cargador, Cargador);
     //Destructor
     ~Recomendaciones();
 
