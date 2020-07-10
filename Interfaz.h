@@ -25,7 +25,7 @@ public:
     //permite seleccionar una opcion
     //PRE: Menu creado
     //POST: propone al usuario una serie de opciones de menu, e inicia las operaciones necesarias para la concrecion de cada una
-    void selec_opcion(Cargador carg_vistas, Cargador carg_no_vistas, Recomendadas recomendeichons);
+    void selec_opcion(Cargador carg_vistas, Cargador carg_no_vistas, Recomendaciones recomendeichons);
 
     //muestra una lista completa
     //PRE: existencia de una lista
