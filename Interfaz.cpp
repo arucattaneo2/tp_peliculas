@@ -20,15 +20,15 @@ void Interfaz::selec_opcion(carg_vistas, carg_no_vistas, recomendeichons){
 	// Ramificacion del programa de acuerdo a la opcion escogida
 	switch(opcion){
 		case 1:{
-			mostrar(carg_vistas);			
+			mostrar_1(carg_vistas);			
 			break;
 		}
 		case 2:{
-			mostrar(carg_no_vistas);
+			mostrar_1(carg_no_vistas);
 			break;
 		}
 		case 3:{
-			mostrar(recomendeichons);
+			mostrar_2(recomendeichons);
 			break;
 		}
 	}
