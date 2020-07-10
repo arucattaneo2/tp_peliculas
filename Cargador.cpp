@@ -5,7 +5,8 @@
 
 Cargador::Cargador() {
 
-    l_peliculas;
+    l_peliculas_vistas;
+    l_peliculas_no_vistas;
 }
 
 
@@ -20,8 +21,7 @@ void Cargador::cargar_datos(string nombre_archivo) {
     ifstream archivo(nombre_archivo);
     string nombre, genero, director;
     Lista<string> *elenco;
-    unsigned puntaje;
-
+    unsigned puntos;
 
     if (!archivo && nombre_archivo == "peliculas_no_vistas.txt") {
         verificar_memoria_liberada();
@@ -31,10 +31,10 @@ void Cargador::cargar_datos(string nombre_archivo) {
     else {
         while (archivo >> nombre) {
             archivo >> genero;
-            archivo >> puntaje;
+            archivo >> puntos;
             archivo >> director;
             elenco = cargar_l_actores(archivo);
-            cargar_l_peliculas(nombre, genero, director, puntaje, elenco);
+            cargar_lista(nombre_archivo, nombre, genero, director, puntos, elenco);
 
         }
         archivo.close();
@@ -43,10 +43,31 @@ void Cargador::cargar_datos(string nombre_archivo) {
 
 }
 
-void Cargador::cargar_l_peliculas(string nombre, string genero, string director, unsigned pnt, Lista<string>* elen) {
+void Cargador::cargar_lista(string archivo, string nombre, string genero, string director, unsigned pts,
+        Lista<string> *elenco){
 
-    Pelicula *pelicula = new Pelicula(nombre, genero, director, pnt, elen);
-    l_peliculas.alta(pelicula);
+    if(archivo == "peliculas_no_vistas.txt")
+        cargar_lista_no_vistas(nombre, genero, director, pts, elenco);
+    else
+        cargar_lista_vistas(nombre, genero, director, pts, elenco);
+
+}
+
+void Cargador::cargar_lista_no_vistas(string nombre, string genero, string director, unsigned pts,
+        Lista<string>* elenco) {
+
+    Pelicula *pelicula = new Pelicula(nombre, genero, director, pts, elenco);
+    l_peliculas_no_vistas.alta(pelicula);
+
+}
+
+
+void Cargador::cargar_lista_vistas(string nombre, string genero, string director, unsigned pts,
+        Lista<string>* elenco) {
+
+    Pelicula *pelicula = new Pelicula(nombre, genero, director, pts, elenco);
+    l_peliculas_vistas.alta(pelicula);
+
 
 }
 
@@ -64,13 +85,17 @@ Lista<string>* Cargador::cargar_l_actores(ifstream &archivo) {
    
 
     return l_actores;
-
 }
 
 
-Lista<Pelicula *> Cargador::obtener_l_peliculas() {
+Lista<Pelicula *> Cargador::obtener_peliculas_vistas() {
 
-    return l_peliculas;
+    return l_peliculas_vistas;
+}
+
+Lista<Pelicula *> Cargador::obtener_peliculas_no_vistas() {
+
+    return l_peliculas_no_vistas;
 }
 
 
@@ -82,7 +107,6 @@ void Cargador::verificar_memoria_liberada() {
     catch (exception &e) {
 
         cout << e.what() << '\n';
-
 
     }
 
