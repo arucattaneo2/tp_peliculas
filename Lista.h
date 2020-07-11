@@ -104,7 +104,7 @@ void Lista<Dato>::baja(unsigned pos) {
         paux = pant->obtener_siguiente();
         pant->establecer_siguiente(paux->obtener_siguiente());
     }
-    //delete paux->obtener_dato(); todo: después ver si hace falta
+
     delete paux;
     tamanio--;
 }

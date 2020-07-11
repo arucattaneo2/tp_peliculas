@@ -1,77 +1,64 @@
 #include <iostream>
 #include "Recomendaciones.h"
 
-Recomendaciones::Recomendaciones(Cargador cargador) {
-
-    lista_vistas = cargador.obtener_peliculas_vistas(); // obtengo lista_vistas
-    lista_no_vistas = cargador.obtener_peliculas_no_vistas(); // obtengo lista_no_vistas
-    Pelicula peli_vista;
-    Pelicula peli_no_vista;
+Recomendaciones::Recomendaciones() {
+    lista_vistas = new Lista<Pelicula *>();
+    lista_no_vistas = new Lista<Pelicula *>();
+    lista_recomendaciones = new Lista<Pelicula *>();
 }
 
 Recomendaciones::~Recomendaciones() {
 
 }
 
-void Recomendaciones::generar_lista_recomendadas() {
-
-    if(lista_vistas)
-        comparar_listas();
-    else
-        comparar_peliculas();
-}
-
-
 void Recomendaciones::comparar_listas() {
+    for (int i = 1; i <= (lista_vistas->obtener_tamanio()); i++) {
+        Pelicula *pelicula_vista = lista_vistas->obtener_dato(i);
 
-    for (int i = 1; i < (lista_vistas.obtener_tamanio()); i++) {
-        for (int j = 1; i < (lista_no_vistas.obtener_tamanio()); j++) {
-            peli_vista = lista_vistas.obtener_dato(i);
-            peli_no_vista = lista_no_vistas.obtener_dato(j);
-            if (coincidencias()) {
-                lista_recomendaciones.alta(peli_no_vista);
+        for (int j = 1; i <= (lista_no_vistas->obtener_tamanio()); j++) {
+            Pelicula *pelicula_no_vista = lista_no_vistas->obtener_dato(j);
+
+            if (comparar_peliculas(pelicula_no_vista, pelicula_vista)) {
+                lista_recomendaciones->alta(pelicula_no_vista);
             }
         }
     }
-
 }
 
 
-
-Lista<Pelicula *> Recomendaciones::obtener_lista_recomendaciones() {
+Lista<Pelicula *> *Recomendaciones::obtener_lista_recomendaciones() {
     return lista_recomendaciones;
 }
 
-bool Recomendaciones::coincidencias() {
-    if (((coincidencia_genero()) && ((coincidencia_director()) || (coincidencia_actores()))) ||
-        (puntaje_suficiente())) {
-        return true;
+bool Recomendaciones::comparar_peliculas(Pelicula *pelicula_no_vista, Pelicula *pelicula_vista) {
+    return coincidencia_genero(pelicula_no_vista, pelicula_vista) && (coincidencia_director(pelicula_no_vista, pelicula_vista) || coincidencia_actores(pelicula_no_vista, pelicula_vista)) || puntaje_suficiente(pelicula_no_vista);
+
+}
+
+bool Recomendaciones::coincidencia_genero(Pelicula *pelicula_no_vista, Pelicula *pelicula_vista) {
+    return pelicula_vista->obtener_genero() == pelicula_no_vista->obtener_genero();
+}
+
+bool Recomendaciones::coincidencia_director(Pelicula *pelicula_no_vista, Pelicula *pelicula_vista) {
+    return pelicula_vista->obtener_director() == pelicula_no_vista->obtener_director();
+}
+
+bool Recomendaciones::coincidencia_actores(Pelicula *pelicula_no_vista, Pelicula *pelicula_vista) {
+    for (int i = 1; i <= (pelicula_vista->cantidad_actores()); i++) {
+        string actor_pelicula_vista = pelicula_vista->obtener_elenco()->obtener_dato(i);
+
+        for (int j = 1; i <= pelicula_no_vista->cantidad_actores(); j++) {
+            string actor_pelicula_no_vista = pelicula_no_vista->obtener_elenco()->obtener_dato(j);
+
+            if (actor_pelicula_no_vista == actor_pelicula_vista) {
+                return true;
+            }
+        }
     }
+    return false;
 }
 
-bool Recomendaciones::coincidencia_genero() {
-    if ((peli_vista->obtener_genero()) == (peli_no_vista->obtener_genero())) {
-        return true;
-    }
+bool Recomendaciones::puntaje_suficiente(Pelicula *pelicula_no_vista) {
+    return pelicula_no_vista->obtener_puntaje() >= PUNTAJE_MINIMO;
 }
 
-bool Recomendaciones::coincidencia_director() {
-    if ((peli_vista->obtener_director()) == (peli_no_vista->obtener_director())) {
-        return true;
-    }
-}
-
-bool Recomendaciones::puntaje_suficiente(){
-
-    return (peli_no_vista.obtener_puntaje()) >= 7);
-}
-
-void Recomendaciones::comparar_peliculas() {
-
-    for(unsigned i = 1; i <= lista_no_vistas.obtener_tamanio(); i++){
-        peli_no_vista = lista_no_vistas.obtener_dato(i);
-        if(puntaje_suficiente())
-            lista_recomendaciones.alta(peli_no_vista);
-    }
-
-}

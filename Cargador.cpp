@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string.h>
+#include <string>
 #include "Cargador.h"
 #include "Memoria_liberada.h"
 /*
@@ -9,11 +9,8 @@ Cargador::Cargador(){
 }
 */
 
-Cargador::~Cargador(){
-
-
+Cargador::~Cargador() {
 }
-
 
 void Cargador::cargar_datos(string nombre_archivo){
 
