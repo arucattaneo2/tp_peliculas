@@ -4,6 +4,7 @@
 using namespace std;
 
 #include <string>
+#include <fstream>
 #include "Lista.h"
 #include "Cargador.h"
 #include "Pelicula.h"
@@ -39,6 +40,23 @@ private:
     //POST: devuelve true si las peliculas comparadas tienen 1 actor en comun, caso contrario devuelve false
     bool coincidencia_actores(Pelicula *pelicula_no_vista, Pelicula *pelicula_vista);
 
+    //PRE: -
+    //POST: Carga los atributos lista_no_vistas y lista_vistas con los archivos que se le pasen por parametro.
+    void cargar_datos(string nombre_archivo_vistas, string nombre_archivo_no_vistas);
+
+    //PRE:-
+    //POS: Lee el archivo y carga la lista o lanza una excepcion dependiendo del estado del archivo
+    void cargar_datos(string nombre_archivo, Lista<Pelicula *> *lista_peliculas);
+
+
+    //PRE:-
+    //POS: Carga la lista lista_actores
+    Lista<string> *cargar_lista_actores(ifstream &archivo);
+
+    //PRE:-
+    //POS: Lanza un expcecion por pantalla que la memoria fue liberada correctamente
+    void verificar_memoria_liberada();
+
 public:
     //Metodos
     //PRE:
@@ -56,6 +74,15 @@ public:
     //PRE: las listas fueron creadas
     //POS: devuelve un puntero al atributo lista_recomendaciones
     Lista<Pelicula *> *obtener_lista_recomendaciones();
+
+    //PRE: las listas fueron creadas
+    //POS: devuelve un puntero al atributo lista_vistas
+    Lista<Pelicula *> *obtener_lista_vistas();
+
+    //PRE: las listas fueron creadas
+    //POS: devuelve un puntero al atributo lista_no_vistas
+    Lista<Pelicula *> *obtener_lista_no_vistas();
+
 };
 
 #endif //RECOMENDACIONES_H

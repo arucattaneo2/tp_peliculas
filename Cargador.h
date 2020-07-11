@@ -1,7 +1,7 @@
 #ifndef CARGADOR_H_
 #define CARGADOR_H_
 
-#include <string.h>
+#include <string>
 #include <fstream>
 #include "Lista.h"
 #include "Pelicula.h"

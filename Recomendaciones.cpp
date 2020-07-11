@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Recomendaciones.h"
+#include "Memoria_liberada.h"
 
 Recomendaciones::Recomendaciones() {
     lista_vistas = new Lista<Pelicula *>();
@@ -25,13 +26,10 @@ void Recomendaciones::comparar_listas() {
     }
 }
 
-
-Lista<Pelicula *> *Recomendaciones::obtener_lista_recomendaciones() {
-    return lista_recomendaciones;
-}
-
 bool Recomendaciones::comparar_peliculas(Pelicula *pelicula_no_vista, Pelicula *pelicula_vista) {
-    return coincidencia_genero(pelicula_no_vista, pelicula_vista) && (coincidencia_director(pelicula_no_vista, pelicula_vista) || coincidencia_actores(pelicula_no_vista, pelicula_vista)) || puntaje_suficiente(pelicula_no_vista);
+    return coincidencia_genero(pelicula_no_vista, pelicula_vista) &&
+           (coincidencia_director(pelicula_no_vista, pelicula_vista) ||
+            coincidencia_actores(pelicula_no_vista, pelicula_vista)) || puntaje_suficiente(pelicula_no_vista);
 
 }
 
@@ -62,3 +60,69 @@ bool Recomendaciones::puntaje_suficiente(Pelicula *pelicula_no_vista) {
     return pelicula_no_vista->obtener_puntaje() >= PUNTAJE_MINIMO;
 }
 
+Lista<Pelicula *> *Recomendaciones::obtener_lista_recomendaciones() {
+    return lista_recomendaciones;
+}
+
+Lista<Pelicula *> *Recomendaciones::obtener_lista_vistas() {
+    return lista_vistas;
+}
+
+Lista<Pelicula *> *Recomendaciones::obtener_lista_no_vistas() {
+    return lista_no_vistas;
+}
+
+void Recomendaciones::cargar_datos(string nombre_archivo_vistas, string nombre_archivo_no_vistas) {
+    cargar_datos(nombre_archivo_no_vistas, lista_no_vistas);
+    cargar_datos(nombre_archivo_vistas, lista_vistas);
+}
+
+void Recomendaciones::cargar_datos(string nombre_archivo, Lista<Pelicula *> *lista_peliculas) {
+
+    ifstream archivo(nombre_archivo);
+    string nombre, genero, director;
+    unsigned puntos;
+    Lista<string> *elenco;
+
+    if (!archivo && nombre_archivo == "peliculas_no_vistas.txt") {
+        verificar_memoria_liberada();
+    } else if (archivo.fail())
+        cout << "Error, no se pudo abrir el archivo" << endl;
+    else {
+        while (archivo >> nombre) {
+            archivo >> genero;
+            archivo >> puntos;
+            archivo >> director;
+            elenco = cargar_lista_actores(archivo);
+            Pelicula *pelicula = new Pelicula(nombre, genero, director, puntos, elenco);
+            lista_peliculas->alta(pelicula);
+        }
+    }
+    archivo.close();
+}
+
+Lista<string> *Recomendaciones::cargar_lista_actores(ifstream &archivo) {
+
+    string actores;
+    Lista<string> *lista_actores = new Lista<string>;
+
+    while (archivo >> actores && archivo.get() != '\n')
+        lista_actores->alta(actores);
+
+    lista_actores->alta(actores);
+
+    return lista_actores;
+}
+
+void Recomendaciones::verificar_memoria_liberada() {
+
+    try {
+        throw memoria_liberada;
+    }
+    catch (exception &e) {
+
+        cout << e.what() << '\n';
+
+    }
+
+}
