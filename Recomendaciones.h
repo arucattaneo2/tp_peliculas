@@ -36,7 +36,7 @@ public:
     //metodo generar_lista_recomendadas
     //PRE: las listas fueron creadas
     //POS: crea la lista de peliculas recomendadas
-    Lista<Pelicula *> generar_lista_recomendadas();
+    void generar_lista_recomendadas();
 
     //metodo obtener_lista_recomendaciones
     //PRE: las listas fueron creadas
@@ -56,7 +56,14 @@ public:
     //metodo coincidencia_director
     //PRE: ---
     //POS: devuelve el valor de verdad de la coincidencia entre los directores de peli_vista y peli_no_vista
-    bool coincidencias_director();
+    bool coincidencia_director();
+    //PRE:-
+    //POS: Da de alta en lista_recomendaciones a las peli_no_vista con puntaje >= 7
+    void comparar_peliculas();
+    //PRE:-
+    //POS: Devuelve true si el puntaje de la peli_no_vista es >= 7
+    bool puntaje_suficiente();
+
 
 };
 
