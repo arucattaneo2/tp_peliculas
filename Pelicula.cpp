@@ -1,15 +1,15 @@
 #include <iostream>
 #include "Pelicula.h"
 
-
-Pelicula::Pelicula(){
+/*
+Pelicula::Pelicula() {
     this->nombre = "";
     this->genero = "";
     this->director = "";
     this->puntaje = 0;
-    this->elenco = 0;
+    this->elenco = nullptr;
 }
-
+*/
 Pelicula::Pelicula(string nombre, string genero, string director, unsigned puntaje, Lista<string> *elenco) {
     this->nombre = nombre;
     this->genero = genero;
@@ -39,7 +39,7 @@ unsigned Pelicula::obtener_puntaje() {
     return puntaje;
 }
 
-Lista<string>* Pelicula::obtener_elenco() {
+Lista<string> *Pelicula::obtener_elenco() {
     return elenco;
 }
 
@@ -56,7 +56,7 @@ void Pelicula::mostrar_pelicula() {
     cout << "Elenco: " << endl;
 
     for (unsigned i = 1; i <= elenco->obtener_tamanio(); i++) {
-        cout << '\n' << (elenco->obtener_dato(i)) << endl;
+        cout << '\n' << elenco->obtener_dato(i) << endl;
     }
 
     cout << "#############################################################" << endl;

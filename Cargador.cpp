@@ -2,12 +2,12 @@
 #include <string.h>
 #include "Cargador.h"
 #include "Memoria_liberada.h"
-
+/*
 Cargador::Cargador(){
     Lista<Pelicula *> lista_vistas;
     Lista<Pelicula *> lista_no_vistas;
 }
-
+*/
 
 Cargador::~Cargador(){
 
