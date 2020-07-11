@@ -23,7 +23,7 @@
         solicitar_opcion();
         redireccionar_opcion();
 
-    }while (opcion != 0);
+    }while (opcion != 4);
 }
 
 
