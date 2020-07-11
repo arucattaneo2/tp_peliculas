@@ -1,4 +1,8 @@
+#include <iostream>
+#include "Lista.h"
 #include "Interfaz.h"
+
+using namespace std;
 
 // Constructor
  Interfaz::Interfaz(){
@@ -9,12 +13,14 @@
 
  }
 
-void Interfaz::selec_opcion(carg_vistas, carg_no_vistas, recomendeichons){
+void Interfaz::selecionar_opcion(Cargador carg_vistas,Cargador carg_no_vistas,Recomendaciones recomendaciones){
  	// Presentacion del menu de opciones
-	cout<<endl<<"Selecciona una opcion correspondiente a una de las siguientes alternativas: "<<endl;
+	cout<<"\n############## Opciones: ################\n"<<endl;
 	cout<<"1.- Mostrar las peliculas vistas"<<endl;
 	cout<<"2.- Mostrar las peliculas no vistas"<<endl;
 	cout<<"3.- Mostrar las peliculas recomendadas"<<endl;
+	cout<<"4.- Salir"<<endl;
+	cout<<"\n#########################################\n";
 	int opcion; cin>>opcion; cout<<endl;
 	
 	// Ramificacion del programa de acuerdo a la opcion escogida
@@ -28,27 +34,31 @@ void Interfaz::selec_opcion(carg_vistas, carg_no_vistas, recomendeichons){
 			break;
 		}
 		case 3:{
-			mostrar_2(recomendeichons);
+			mostrar_2(recomendaciones);
+			break;
+		}
+		case 4:{
+			exit(0);
 			break;
 		}
 	}
  }
 
 
- void Interfaz::mostrar_1(cargadore){
- 	Lista <Pelicula *> lista_pelis = cargador.obtener_l_peliculas();
- 	for(int i=1;i<=(lista_pelis.get_tam());i++){
+ void Interfaz::mostrar_1(Cargador cargador){
+ 	Lista <Pelicula *> pelis_vistas = cargador.obtener_peliculas_vistas();
+ 	for(unsigned i=1;i<=(pelis_vistas.obtener_tamanio());i++){
 		// le paso al mismo puntero que estaba usando la direccion del objeto en memoria
-		puntPeli=lista_pelis.get_dato(i);
+		puntPeli=pelis_vistas.obtener_dato(i);
 		puntPeli->mostrar_pelicula();
 	}
  }
 
- void Interfaz::mostrar_2(recomendador){
- 	Lista <Pelicula *> lista_pelis = recomendador.obtener_l_recomendaciones();
- 	for(int i=1;i<=(lista_pelis.get_tam());i++){
+ void Interfaz::mostrar_2(Recomendaciones recomendador){
+ 	Lista <Pelicula *> pelis_recomendadas = recomendador.obtener_lista_recomendaciones();
+ 	for(unsigned i=1;i<=(pelis_recomendadas.obtener_tamanio());i++){
 		// le paso al mismo puntero que estaba usando la direccion del objeto en memoria
-		puntPeli=lista_pelis.get_dato(i);
+		puntPeli=pelis_recomendadas.obtener_dato(i);
 		puntPeli->mostrar_pelicula();
 	}
  }

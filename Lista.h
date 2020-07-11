@@ -6,66 +6,67 @@
 template<class Dato>
 class Lista {
 
-private:
-    Nodo<Dato> *primero;
-    unsigned tamanio;
+	private:
+	    Nodo<Dato> *primero;
+	    unsigned tamanio;
 
-public:
-    /*
-    constructor
-    PRE: ---
-    POST: construye una lista vacia
-    */
-    Lista();
+	public:
+	    /*
+	    constructor
+	    PRE: ---
+	    POST: construye una lista vacia
+	    */
+	    Lista();
 
-    /*
-    metodo lista_vacia
-    PRE: la lista fue creada
-    POST: indica si la lista tiene elementos dentro o no
-    */
-    bool lista_vacia();
+	    /*
+	    metodo lista_vacia
+	    PRE: la lista fue creada
+	    POST: indica si la lista tiene elementos dentro o no
+	    */
+	    bool lista_vacia();
 
-    /*
-    metodo obtener_tamanio
-    PRE: la lista fue creada
-    POST: devuelve el tamanio de la lista
-    */
-    unsigned obtener_tamanio();
+	    /*
+	    metodo obtener_tamanio
+	    PRE: la lista fue creada
+	    POST: devuelve el tamanio de la lista
+	    */
+	    unsigned obtener_tamanio();
 
-    /*
-    metodo alta
-    PRE: la lista fue creada
-    POST: agrega un dato a la lista e incrementa en una unidad el tamanio
-    */
-    void alta(Dato f);
+	    /*
+	    metodo alta
+	    PRE: la lista fue creada
+	    POST: agrega un dato a la lista e incrementa en una unidad el tamanio
+	    */
+	    void alta(Dato f);
 
-    /*
-    metodo baja
-    PRE: la lista fue creada
-    POST: libera el nodo que esta en la posición pos
-    */
-    void baja(unsigned pos);
+	    /*
+	    metodo baja
+	    PRE: la lista fue creada
+	    POST: libera el nodo que esta en la posición pos
+	    */
+	    void baja(unsigned pos);
 
-    /*
-    metodo obtener_dato
-    PRE: la lista fue creada
-    POST: devuelve un puntero al dato de la posicion pos
-    */
-    Dato obtener_dato(unsigned pos);
+	    /*
+	    metodo obtener_dato
+	    PRE: la lista fue creada
+	    POST: devuelve un puntero al dato de la posicion pos
+	    */
+	    Dato obtener_dato(unsigned pos);
 
-    /*
-    destructor
-    PRE: la lista fue creada
-    POST: elimina la lista
-    */
-    ~Lista();
+	    /*
+	    destructor
+	    PRE: la lista fue creada
+	    POST: elimina la lista
+	    */
+	    ~Lista();
 
-private:
-    // PRE: 0 < pos <= tam
-    // POST: devuelve un puntero al nodo
-    Nodo<Dato> *obtener_nodo(unsigned pos);
+	private:
+	    // PRE: 0 < pos <= tam
+	    // POST: devuelve un puntero al nodo
+	    Nodo<Dato> *obtener_nodo(unsigned pos);
 
 };
+
 
 template<class Dato>
 Lista<Dato>::Lista() {
@@ -135,6 +136,5 @@ Lista<Dato>::~Lista() {
         baja(1);
     }
 }
-
 
 #endif //LISTA_H

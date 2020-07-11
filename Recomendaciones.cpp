@@ -1,58 +1,52 @@
+#include <iostream>
+#include "Recomendaciones.h"
 
-#include "Recomendacion.h"
-#include "Cargador.h"
-
-Recomendaciones::Recomendaciones(Cargador carga) {
-    l_recomendaciones;
-    Lista <Pelicula *> l_vistas = carga.obtener_peliculas_vistas(); // obtengo lista vistas
-	Lista <Pelicula *> l_no_vistas = carga.obtener_peliculas_no_vistas(); // obtengo lista no vistas
-	Pelicula* vista;
-	Pelicula* no_vista;
+Recomendaciones::Recomendaciones(Cargador cargador){
+    Lista<Pelicula* > lista_recomendaciones;
+    Lista<Pelicula* > lista_vistas = cargador.obtener_peliculas_vistas(); // obtengo lista_vistas
+	Lista<Pelicula* > lista_no_vistas = cargador.obtener_peliculas_no_vistas(); // obtengo lista_no_vistas
+	Pelicula peli_vista;
+	Pelicula peli_no_vista;
 }
 
-Recomendaciones::~Recomendaciones() {
-
-}
-
-
-void Recomendaciones::comparar_listas() {
+Recomendaciones::~Recomendaciones(){
 
 }
 
-Lista<Pelicula *> Recomendaciones::obtener_l_recomendaciones() {
+void Recomendaciones::comparar_listas(){
 
-    return l_recomendaciones;
 }
 
-
-
-
-Lista <Pelicula*> generar_recomendadas(){
-	for(unsigned i=1;i<(l_vistas.get_tam());i++){
-		for(unsigned j=1;i<(l_no_vistas.get_tam());j++){
-			vista=l_vistas.obtener_dato(i);
-			no_vista=l_no_vistas.obtener_dato(j);
-			if(juez_booleano()){
-				l_recomendaciones.alta(no_vista);
+Lista <Pelicula*> generar_lista_recomendadas(){
+	for(unsigned i = 1;i < (lista_vistas.obtener_tamanio());i++){
+		for(unsigned j = 1;i < (lista_no_vistas.obtener_tamanio());j++){
+			peli_vista = lista_vistas.obtener_dato(i);
+			peli_no_vista = lista_no_vistas.obtener_dato(j);
+			if(coincidencias()){
+				lista_recomendaciones.alta(peli_no_vista);
 			}
 		}
 	}
 }
 
-bool juez_booleano(){
-	if( ((match_genero())&&( (match_director()) || (match_actores()) )) || (puntaje_suficiente()) ){
-		return true
+Lista<Pelicula *> Recomendaciones::obtener_lista_recomendaciones(){
+    return lista_recomendaciones;
+}
+
+bool coincidencias(){
+	if( ((coincidencia_genero())&&( (coincidencia_director()) || (coincidencia_actores()) )) || (puntaje_suficiente()) ){
+		return true;
 	}
 }
 
-bool match_genero(){
-	if((vista->obtener_genero())==(no_vista->obtener_genero())){
-		return true
+bool coincidencia_genero(){
+	if((peli_vista->obtener_genero())==(peli_no_vista->obtener_genero())){
+		return true;
 	}
 }
 
-bool match_genero(){
-	if((vista->obtener_director())==(no_vista->obtener_director())){
-		return true
+bool coincidencia_director(){
+	if((peli_vista->obtener_director())==(peli_no_vista->obtener_director())){
+		return true;
 	}
 }

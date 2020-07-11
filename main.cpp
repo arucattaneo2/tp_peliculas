@@ -1,5 +1,3 @@
-
-
 #include "Cargador.h"
 
 using namespace std;
@@ -12,6 +10,8 @@ int main(){
     //Pelicula q("The Lobster", "Drama", "kcyo", 8);
     Lista<Pelicula*> peliculas;
     peliculas.alta(p);
+    */
+    
     /*
     peliculas.alta(q);
     peliculas.obtener_dato(1).mostrar_pelicula();
