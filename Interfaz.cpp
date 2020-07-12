@@ -1,21 +1,18 @@
 
 #include "Interfaz.h"
-#include "Pelicula.h"
 #include <iostream>
+using namespace std;
 
  Interfaz::Interfaz(Recomendaciones recomendaciones) {
     lista_vistas = recomendaciones.obtener_lista_vistas();
     lista_no_vistas = recomendaciones.obtener_lista_no_vistas();
-    lista_recomendadas = recomendaciones.obtener_lista_recomendadas();
-    unsigned opcion;
- }
-
- Interfaz::~Interfaz() {
-
+    lista_recomendadas = recomendaciones.obtener_lista_recomendaciones();
+    opcion = 0;
  }
 
 
- void Interfaz::ejecutar_interfaz() {
+
+ void Interfaz::ejecutar_interfaz(){
 
     do{
         mostrar_opciones();
@@ -65,7 +62,7 @@ void Interfaz::redireccionar_opcion() {
 
 
  void Interfaz::mostrar_peliculas_vistas() {
-     Pelicula *pelicula;
+    Pelicula *pelicula;
     for(unsigned i = 1; i <= (lista_vistas->obtener_tamanio()); i++) {
          pelicula = lista_vistas->obtener_dato(i);
          pelicula->mostrar_pelicula();
@@ -86,7 +83,12 @@ void Interfaz::redireccionar_opcion() {
     Pelicula *pelicula;
     for(unsigned i = 1; i <= (lista_recomendadas->obtener_tamanio()); i++) {
          pelicula = lista_recomendadas -> obtener_dato(i);
-         pelicula -> mostrar_pelicula();
+         pelicula->mostrar_pelicula();
     }
+
+}
+
+
+Interfaz::~Interfaz() {
 
 }

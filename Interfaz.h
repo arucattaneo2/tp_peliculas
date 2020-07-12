@@ -3,6 +3,8 @@
 #define INTERFAZ_H
 
 #include "Recomendaciones.h"
+#include "Lista.h"
+#include "Pelicula.h"
 
 class Interfaz {
 
