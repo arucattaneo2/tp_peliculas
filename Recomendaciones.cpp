@@ -20,7 +20,7 @@ Recomendaciones::~Recomendaciones() {
     borrar_lista(lista_aux);
     lista_aux = lista_no_vistas;
     borrar_lista(lista_aux);
-    borrar_lista(lista_recomendadas);
+    //borrar_lista(lista_recomendadas);
     delete lista_vistas;
     delete lista_no_vistas;
     delete lista_recomendadas;
@@ -37,13 +37,14 @@ void Recomendaciones::comparar_listas() {
     } else {
 
         for (int i = 1; i <= (lista_no_vistas->obtener_tamanio()); i++) {
+            bool agregada = false;
             Pelicula *pelicula_no_vista = lista_no_vistas->obtener_dato(i);
 
-            for (int j = 1; j <= (lista_vistas->obtener_tamanio()); j++) {
+            for (int j = 1; j <= (lista_vistas->obtener_tamanio()) && !agregada; j++) {
                 Pelicula *pelicula_vista = lista_vistas->obtener_dato(j);
                 if (comparar_peliculas(pelicula_no_vista, pelicula_vista)) {
                     lista_recomendadas->alta(pelicula_no_vista);
-                    //esta agregando más de una vez pelicula no vista
+                    agregada = true;
                 }
             }
         }
