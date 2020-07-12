@@ -5,22 +5,42 @@
 Recomendaciones::Recomendaciones() {
     lista_vistas = new Lista<Pelicula *>();
     lista_no_vistas = new Lista<Pelicula *>();
-    lista_recomendaciones = new Lista<Pelicula *>();
+    lista_recomendadas = new Lista<Pelicula *>();
+}
+
+void Recomendaciones::borrar_lista(Lista<Pelicula *> *lista_aux) {
+    while (!(lista_aux->lista_vacia())) {
+        delete lista_aux->obtener_dato(1);
+        lista_aux->baja(1);
+    }
 }
 
 Recomendaciones::~Recomendaciones() {
-
+    Lista<Pelicula *> *lista_aux = lista_vistas;
+    borrar_lista(lista_aux);
+    lista_aux = lista_no_vistas;
+    borrar_lista(lista_aux);
+    delete lista_vistas;
+    delete lista_no_vistas;
+    delete lista_recomendadas;
 }
 
 void Recomendaciones::comparar_listas() {
-    for (int i = 1; i <= (lista_vistas->obtener_tamanio()); i++) {
-        Pelicula *pelicula_vista = lista_vistas->obtener_dato(i);
+    if (lista_vistas->lista_vacia()) {
+        for (int i = 1; i <= (lista_no_vistas->obtener_tamanio()); i++) {
+            Pelicula *pelicula_no_vista = lista_no_vistas->obtener_dato(i);
+            if (puntaje_suficiente(pelicula_no_vista))
+                lista_recomendadas->alta(pelicula_no_vista);
+        }
 
-        for (int j = 1; i <= (lista_no_vistas->obtener_tamanio()); j++) {
-            Pelicula *pelicula_no_vista = lista_no_vistas->obtener_dato(j);
+    } else {
+        for (int i = 1; i <= (lista_vistas->obtener_tamanio()); i++) {
+            Pelicula *pelicula_vista = lista_vistas->obtener_dato(i);
 
-            if (comparar_peliculas(pelicula_no_vista, pelicula_vista)) {
-                lista_recomendaciones->alta(pelicula_no_vista);
+            for (int j = 1; j <= (lista_no_vistas->obtener_tamanio()); j++) {
+                Pelicula *pelicula_no_vista = lista_no_vistas->obtener_dato(j);
+                if (comparar_peliculas(pelicula_no_vista, pelicula_vista))
+                    lista_recomendadas->alta(pelicula_no_vista);
             }
         }
     }
@@ -60,8 +80,8 @@ bool Recomendaciones::puntaje_suficiente(Pelicula *pelicula_no_vista) {
     return pelicula_no_vista->obtener_puntaje() >= PUNTAJE_MINIMO;
 }
 
-Lista<Pelicula *> *Recomendaciones::obtener_lista_recomendaciones() {
-    return lista_recomendaciones;
+Lista<Pelicula *> *Recomendaciones::obtener_lista_recomendadas() {
+    return lista_recomendadas;
 }
 
 Lista<Pelicula *> *Recomendaciones::obtener_lista_vistas() {

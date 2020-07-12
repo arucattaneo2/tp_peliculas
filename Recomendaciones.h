@@ -15,7 +15,7 @@ class Recomendaciones {
 
 private:
     //Atributos
-    Lista<Pelicula *> *lista_recomendaciones;
+    Lista<Pelicula *> *lista_recomendadas;
     Lista<Pelicula *> *lista_vistas;
     Lista<Pelicula *> *lista_no_vistas;
 
@@ -57,23 +57,26 @@ private:
     //POS: Lanza un expcecion por pantalla que la memoria fue liberada correctamente
     void verificar_memoria_liberada();
 
+    void borrar_lista(Lista<Pelicula *> *lista_aux);
+
+    //PRE:
+    //POST:
+    ~Recomendaciones();
+
 public:
     //Metodos
     //PRE:
     //POST:
     Recomendaciones();
 
-    //PRE:
-    //POST:
-    ~Recomendaciones();
 
     //PRE: las listas fueron creadas
     //POS:
     void comparar_listas();
 
     //PRE: las listas fueron creadas
-    //POS: devuelve un puntero al atributo lista_recomendaciones
-    Lista<Pelicula *> *obtener_lista_recomendaciones();
+    //POS: devuelve un puntero al atributo lista_recomendadas
+    Lista<Pelicula *> *obtener_lista_recomendadas();
 
     //PRE: las listas fueron creadas
     //POS: devuelve un puntero al atributo lista_vistas
