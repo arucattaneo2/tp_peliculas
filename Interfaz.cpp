@@ -6,7 +6,7 @@ using namespace std;
  Interfaz::Interfaz(Recomendaciones recomendaciones) {
     lista_vistas = recomendaciones.obtener_lista_vistas();
     lista_no_vistas = recomendaciones.obtener_lista_no_vistas();
-    lista_recomendadas = recomendaciones.obtener_lista_recomendaciones();
+    lista_recomendadas = recomendaciones.obtener_lista_recomendadas();
     opcion = 0;
  }
 
