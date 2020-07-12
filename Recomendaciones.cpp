@@ -20,6 +20,7 @@ Recomendaciones::~Recomendaciones() {
     borrar_lista(lista_aux);
     lista_aux = lista_no_vistas;
     borrar_lista(lista_aux);
+    borrar_lista(lista_recomendadas);
     delete lista_vistas;
     delete lista_no_vistas;
     delete lista_recomendadas;
@@ -34,13 +35,16 @@ void Recomendaciones::comparar_listas() {
         }
 
     } else {
-        for (int i = 1; i <= (lista_vistas->obtener_tamanio()); i++) {
-            Pelicula *pelicula_vista = lista_vistas->obtener_dato(i);
 
-            for (int j = 1; j <= (lista_no_vistas->obtener_tamanio()); j++) {
-                Pelicula *pelicula_no_vista = lista_no_vistas->obtener_dato(j);
-                if (comparar_peliculas(pelicula_no_vista, pelicula_vista))
+        for (int i = 1; i <= (lista_no_vistas->obtener_tamanio()); i++) {
+            Pelicula *pelicula_no_vista = lista_no_vistas->obtener_dato(i);
+
+            for (int j = 1; j <= (lista_vistas->obtener_tamanio()); j++) {
+                Pelicula *pelicula_vista = lista_vistas->obtener_dato(j);
+                if (comparar_peliculas(pelicula_no_vista, pelicula_vista)) {
                     lista_recomendadas->alta(pelicula_no_vista);
+                    //esta agregando más de una vez pelicula no vista
+                }
             }
         }
     }
@@ -65,7 +69,7 @@ bool Recomendaciones::coincidencia_actores(Pelicula *pelicula_no_vista, Pelicula
     for (int i = 1; i <= (pelicula_vista->cantidad_actores()); i++) {
         string actor_pelicula_vista = pelicula_vista->obtener_elenco()->obtener_dato(i);
 
-        for (int j = 1; i <= pelicula_no_vista->cantidad_actores(); j++) {
+        for (int j = 1; j <= pelicula_no_vista->cantidad_actores(); j++) {
             string actor_pelicula_no_vista = pelicula_no_vista->obtener_elenco()->obtener_dato(j);
 
             if (actor_pelicula_no_vista == actor_pelicula_vista) {
@@ -107,7 +111,7 @@ void Recomendaciones::cargar_datos(string nombre_archivo, Lista<Pelicula *> *lis
     if (!archivo && nombre_archivo == "peliculas_no_vistas.txt") {
         verificar_memoria_liberada();
     } else if (archivo.fail())
-        cout << "Error, no se pudo abrir el archivo" << endl;
+        cout << "Error, no se pudo abrir el archivo: " << nombre_archivo << endl;
     else {
         while (archivo >> nombre) {
             archivo >> genero;
@@ -117,8 +121,9 @@ void Recomendaciones::cargar_datos(string nombre_archivo, Lista<Pelicula *> *lis
             Pelicula *pelicula = new Pelicula(nombre, genero, director, puntos, elenco);
             lista_peliculas->alta(pelicula);
         }
+        archivo.close();
     }
-    archivo.close();
+
 }
 
 Lista<string> *Recomendaciones::cargar_lista_actores(ifstream &archivo) {
