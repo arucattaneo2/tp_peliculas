@@ -35,7 +35,7 @@ public:
     unsigned obtener_puntaje();
 
     //PRE: -
-    //POST: Muestra por pantalla el listado del elenco
+    //POST: Devuelve un puntero al elenco de la pelicula
     Lista<string> *obtener_elenco();
 
     //PRE: -
