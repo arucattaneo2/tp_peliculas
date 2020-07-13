@@ -44,5 +44,7 @@ void Pelicula::mostrar_pelicula() {
 }
 
 Pelicula::~Pelicula() {
+    
+    delete elenco;
 
 }
