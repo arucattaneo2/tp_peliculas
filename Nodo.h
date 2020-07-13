@@ -7,7 +7,7 @@ class Nodo {
 private:
     //Atributos
     Dato dato;
-    Nodo *psig;
+    Nodo<Dato> *psig;
 
 public:
     //Metodos
