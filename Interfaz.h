@@ -30,12 +30,12 @@ public:
     //POS: Solicita por pantalla el ingresa de una opcion
     void solicitar_opcion();
 
-    //PRE:--
-    //POS: Muestra por pantalla la lista de peliculas vistas
     //PRE:  0 < opcion >= 3
     //POS: Segun el valor del atributo opcion realiza la accion correspondiente
     void redireccionar_opcion();
 
+    //PRE:--
+    //POS: Muestra por pantalla la lista de peliculas vistas
     void mostrar_peliculas_vistas();
 
     //PRE:--
@@ -45,6 +45,13 @@ public:
     //PRE:--
     //POS: Muestra por pantalla la lista de peliculas recomendadas
     void mostrar_peliculas_recomendadas();
+
+    //PRE: --
+    //POS: Borrar los elementos de una lista pertenecientes al puntero a lista pasado por parametro
+    void borrar_lista(Lista<Pelicula *> *lista_aux);
+
+    //Destructor
+    ~Interfaz();
 
 };
 

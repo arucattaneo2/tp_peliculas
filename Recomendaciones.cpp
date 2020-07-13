@@ -2,6 +2,9 @@
 #include "Recomendaciones.h"
 #include "Memoria_liberada.h"
 
+
+const string PELICULAS_NO_VISTAS = "peliculas_no_vistas.txt";
+
 Recomendaciones::Recomendaciones() {
     lista_vistas = new Lista<Pelicula *>();
     lista_no_vistas = new Lista<Pelicula *>();
@@ -19,9 +22,10 @@ void Recomendaciones::cargar_datos(string nombre_archivo, Lista<Pelicula *> *lis
     unsigned puntos;
     Lista<string> *elenco;
 
-    if (!archivo && nombre_archivo == "peliculas_no_vistas.txt") {
+    if (!archivo && nombre_archivo == PELICULAS_NO_VISTAS) {
         verificar_memoria_liberada();
-    } else if (archivo.fail())
+    }
+    else if (archivo.fail())
         cout << "Error, no se pudo abrir el archivo: " << nombre_archivo << endl;
     else {
         while (archivo >> nombre) {
@@ -123,6 +127,7 @@ Lista<Pelicula *> *Recomendaciones::obtener_lista_no_vistas() {
 }
 
 void Recomendaciones::verificar_memoria_liberada() {
+
     try {
         throw memoria_liberada;
     }
@@ -131,20 +136,9 @@ void Recomendaciones::verificar_memoria_liberada() {
     }
 }
 
-void Recomendaciones::borrar_lista(Lista<Pelicula *> *lista_aux) {
-    while (!(lista_aux->lista_vacia())) {
-        delete lista_aux->obtener_dato(1);
-        lista_aux->baja(1);
-    }
-}
+
 
 Recomendaciones::~Recomendaciones() {
-    Lista<Pelicula *> *lista_aux = lista_vistas;
-    borrar_lista(lista_aux);
-    lista_aux = lista_no_vistas;
-    borrar_lista(lista_aux);
-    //borrar_lista(lista_recomendadas);
-    delete lista_vistas;
-    delete lista_no_vistas;
-    delete lista_recomendadas;
+
+
 }
