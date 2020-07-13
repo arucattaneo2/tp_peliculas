@@ -1,16 +1,19 @@
 #include "Recomendaciones.h"
+#include "Interfaz.h"
+
+const string PELICULAS_VISTAS = "peliculas_vistas.txt";
+const string PELICULAS_NO_VISTAS = "peliculas_no_vistas.txt";
 
 using namespace std;
 
 int main(){
 
     Recomendaciones recomendaciones;
-    recomendaciones.cargar_datos("peliculas_vistas.txt", "peliculas_no_vistas.txt");
-    recomendaciones.comparar_listas();
-    for (int i = 1; i <= recomendaciones.obtener_lista_recomendadas()->obtener_tamanio(); i++) {
-        recomendaciones.obtener_lista_recomendadas()->obtener_dato(i)->mostrar_pelicula();
-    }
-
+    recomendaciones.cargar_datos(PELICULAS_VISTAS, PELICULAS_NO_VISTAS);
+    recomendaciones.crear_lista_recomendadas();
+    Interfaz i(recomendaciones);
+    if(!recomendaciones.obtener_lista_no_vistas()->lista_vacia())
+        i.ejecutar_interfaz();
 
     return 0;
 }
