@@ -54,7 +54,9 @@ private:
     //POS: Lanza un expcecion por pantalla que la memoria fue liberada correctamente
     void verificar_memoria_liberada();
 
+    void cargar_recomendadas_segun_puntaje();
 
+    bool pelicula_es_recomendada(Pelicula *pelicula_no_vista);
 
 public:
     //Metodos
@@ -65,7 +67,7 @@ public:
 
     //PRE: las listas fueron creadas
     //POS:
-    void comparar_listas();
+    void crear_lista_recomendadas();
 
     //PRE: -
     //POST: Carga los atributos lista_no_vistas y lista_vistas con los archivos que se le pasen por parametro.
@@ -89,6 +91,8 @@ public:
     //PRE:
     //POST:
     ~Recomendaciones();
+
+
 
 };
 
