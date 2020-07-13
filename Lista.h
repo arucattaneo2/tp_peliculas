@@ -6,65 +6,66 @@
 template<class Dato>
 class Lista {
 
-	private:
-	    Nodo<Dato> *primero;
-	    unsigned tamanio;
+private:
+    //Atributos
+    Nodo<Dato> *primero;
+    unsigned tamanio;
 
-	public:
-	    /*
-	    constructor
-	    PRE: ---
-	    POST: construye una lista vacia
-	    */
-	    Lista();
+    //Metodos
+    // PRE: 0 < pos <= tam
+    // POST: devuelve un puntero al nodo
+    Nodo<Dato> *obtener_nodo(unsigned pos);
 
-	    /*
-	    metodo lista_vacia
-	    PRE: la lista fue creada
-	    POST: indica si la lista tiene elementos dentro o no
-	    */
-	    bool lista_vacia();
+public:
+    //Metodos
+    /*
+    constructor
+    PRE: ---
+    POST: construye una lista vacia
+    */
+    Lista();
 
-	    /*
-	    metodo obtener_tamanio
-	    PRE: la lista fue creada
-	    POST: devuelve el tamanio de la lista
-	    */
-	    unsigned obtener_tamanio();
+    /*
+    metodo lista_vacia
+    PRE: la lista fue creada
+    POST: indica si la lista tiene elementos dentro o no
+    */
+    bool lista_vacia();
 
-	    /*
-	    metodo alta
-	    PRE: la lista fue creada
-	    POST: agrega un dato a la lista e incrementa en una unidad el tamanio
-	    */
-	    void alta(Dato f);
+    /*
+    metodo obtener_tamanio
+    PRE: la lista fue creada
+    POST: devuelve el tamanio de la lista
+    */
+    unsigned obtener_tamanio();
 
-	    /*
-	    metodo baja
-	    PRE: la lista fue creada
-	    POST: libera el nodo que esta en la posición pos
-	    */
-	    void baja(unsigned pos);
+    /*
+    metodo alta
+    PRE: la lista fue creada
+    POST: agrega un dato a la lista e incrementa en una unidad el tamanio
+    */
+    void alta(Dato f);
 
-	    /*
-	    metodo obtener_dato
-	    PRE: la lista fue creada
-	    POST: devuelve un puntero al dato de la posicion pos
-	    */
-	    Dato obtener_dato(unsigned pos);
+    /*
+    metodo baja
+    PRE: la lista fue creada
+    POST: libera el nodo que esta en la posición pos
+    */
+    void baja(unsigned pos);
 
-	    /*
-	    destructor
-	    PRE: la lista fue creada
-	    POST: elimina la lista
-	    */
-	    ~Lista();
+    /*
+    metodo obtener_dato
+    PRE: la lista fue creada
+    POST: devuelve un puntero al dato de la posicion pos
+    */
+    Dato obtener_dato(unsigned pos);
 
-	private:
-	    // PRE: 0 < pos <= tam
-	    // POST: devuelve un puntero al nodo
-	    Nodo<Dato> *obtener_nodo(unsigned pos);
-
+    /*
+    destructor
+    PRE: la lista fue creada
+    POST: elimina la lista
+    */
+    ~Lista();
 };
 
 
@@ -85,7 +86,6 @@ void Lista<Dato>::alta(Dato f) {
         pnodo->establecer_siguiente(paux->obtener_siguiente());
         paux->establecer_siguiente(pnodo);
     }
-
     tamanio++;
 }
 
@@ -104,7 +104,6 @@ void Lista<Dato>::baja(unsigned pos) {
         paux = pant->obtener_siguiente();
         pant->establecer_siguiente(paux->obtener_siguiente());
     }
-
     delete paux;
     tamanio--;
 }
