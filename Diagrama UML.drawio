@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-07-13T17:39:02.469Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36" etag="Mmpa4Idfhwc9JGV13sd4" version="13.3.7" type="github">
+<mxfile host="app.diagrams.net" modified="2020-07-13T22:18:20.620Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36" etag="qK-QMLEDI7DOxT44hSXy" version="13.4.2" type="github">
   <diagram id="9dh1zZpuQxdGnGn2-EJ5" name="Page-1">
-    <mxGraphModel dx="1210" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2893" dy="1607" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -54,7 +54,7 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="430" y="700" />
-              <mxPoint x="219" y="700" />
+              <mxPoint x="287" y="700" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -65,15 +65,6 @@
               <mxPoint x="623" y="700" />
             </Array>
           </mxGeometry>
-        </mxCell>
-        <mxCell id="n-AFm8av6x-7B9_5lniA-44" value="Memoria_liberada" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="621" y="1010" width="160" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="n-AFm8av6x-7B9_5lniA-50" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-44" vertex="1">
-          <mxGeometry y="26" width="160" height="8" as="geometry" />
-        </mxCell>
-        <mxCell id="n-AFm8av6x-7B9_5lniA-51" value="+ method(type) : type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-44" vertex="1">
-          <mxGeometry y="34" width="160" height="26" as="geometry" />
         </mxCell>
         <mxCell id="n-AFm8av6x-7B9_5lniA-70" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#FCFCFC;" parent="1" source="n-AFm8av6x-7B9_5lniA-1" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -148,45 +139,6 @@
         <mxCell id="n-AFm8av6x-7B9_5lniA-25" value="Dato" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="n-AFm8av6x-7B9_5lniA-27" vertex="1">
           <mxGeometry y="10" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="n-AFm8av6x-7B9_5lniA-55" value="Recomendaciones" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
-          <mxGeometry x="64" y="340" width="349.5" height="320" as="geometry" />
-        </mxCell>
-        <mxCell id="n-AFm8av6x-7B9_5lniA-56" value="- lista_vistas : Lista&lt;Pelicula*&gt;*" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
-          <mxGeometry y="26" width="349.5" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="n-AFm8av6x-7B9_5lniA-57" value="- lista_no_vistas : Lista&lt;Pelicula*&gt;*" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
-          <mxGeometry y="52" width="349.5" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="n-AFm8av6x-7B9_5lniA-58" value="- lista_recomendadas : Lista&lt;Pelicula*&gt;*" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
-          <mxGeometry y="78" width="349.5" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="n-AFm8av6x-7B9_5lniA-59" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
-          <mxGeometry y="104" width="349.5" height="8" as="geometry" />
-        </mxCell>
-        <mxCell id="n-AFm8av6x-7B9_5lniA-66" value="+ cargar_datos(string, string)" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
-          <mxGeometry y="112" width="349.5" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="n-AFm8av6x-7B9_5lniA-61" value="- cargar_datos(string, Lista&lt;Pelicula*&gt;*)" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
-          <mxGeometry y="138" width="349.5" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="n-AFm8av6x-7B9_5lniA-62" value="- cargar_lista_actores(ifstream) : Lista&lt;string&gt;*" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
-          <mxGeometry y="164" width="349.5" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="n-AFm8av6x-7B9_5lniA-67" value="+ crear_lista_recomendadas()" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
-          <mxGeometry y="190" width="349.5" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="n-AFm8av6x-7B9_5lniA-64" value="- cargar_recomendadas_segun_puntaje()" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
-          <mxGeometry y="216" width="349.5" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="n-AFm8av6x-7B9_5lniA-65" value="- pelicula_es_recomendada(Pelicula*)" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
-          <mxGeometry y="242" width="349.5" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="n-AFm8av6x-7B9_5lniA-60" value="- comparar_peliculas(Pelicula*, Pelicula*) : bool" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
-          <mxGeometry y="268" width="349.5" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="n-AFm8av6x-7B9_5lniA-63" value="- verificar_memoria_liberada()" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
-          <mxGeometry y="294" width="349.5" height="26" as="geometry" />
-        </mxCell>
         <mxCell id="aDNBMNtZ098S1T6gU87t-37" value="Interfaz" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#FFFFFF;" parent="1" vertex="1">
           <mxGeometry x="500" y="340" width="239" height="346" as="geometry" />
         </mxCell>
@@ -226,7 +178,7 @@
         <mxCell id="n-AFm8av6x-7B9_5lniA-43" value="+ mostrar_peliculas_recomendadas()" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="aDNBMNtZ098S1T6gU87t-37" vertex="1">
           <mxGeometry y="294" width="239" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="qo-4sZpLzfLBjrqJbudx-18" value="+ borrar_lista(Lista&lt;Pelicula*&gt;*)" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="aDNBMNtZ098S1T6gU87t-37">
+        <mxCell id="qo-4sZpLzfLBjrqJbudx-18" value="+ borrar_lista(Lista&lt;Pelicula*&gt;*)" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="aDNBMNtZ098S1T6gU87t-37" vertex="1">
           <mxGeometry y="320" width="239" height="26" as="geometry" />
         </mxCell>
         <mxCell id="aDNBMNtZ098S1T6gU87t-18" value="Pelicula" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#FFFFFF;" parent="1" vertex="1">
@@ -252,6 +204,54 @@
         </mxCell>
         <mxCell id="aDNBMNtZ098S1T6gU87t-21" value="+ mostrar_pelicula()" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="aDNBMNtZ098S1T6gU87t-18" vertex="1">
           <mxGeometry y="164" width="319" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="n-AFm8av6x-7B9_5lniA-55" value="Recomendaciones" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#FFFFFF;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="170" y="340" width="263.5" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="n-AFm8av6x-7B9_5lniA-56" value="- lista_vistas : Lista&lt;Pelicula*&gt;*" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
+          <mxGeometry y="26" width="263.5" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="n-AFm8av6x-7B9_5lniA-57" value="- lista_no_vistas : Lista&lt;Pelicula*&gt;*" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
+          <mxGeometry y="52" width="263.5" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="n-AFm8av6x-7B9_5lniA-58" value="- lista_recomendadas : Lista&lt;Pelicula*&gt;*" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
+          <mxGeometry y="78" width="263.5" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="n-AFm8av6x-7B9_5lniA-59" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
+          <mxGeometry y="104" width="263.5" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="n-AFm8av6x-7B9_5lniA-66" value="+ cargar_datos(string, string)" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
+          <mxGeometry y="112" width="263.5" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="n-AFm8av6x-7B9_5lniA-61" value="- cargar_datos(string, Lista&lt;Pelicula*&gt;*)" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
+          <mxGeometry y="138" width="263.5" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="n-AFm8av6x-7B9_5lniA-62" value="- cargar_lista_actores(ifstream) : Lista&lt;string&gt;*" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
+          <mxGeometry y="164" width="263.5" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="n-AFm8av6x-7B9_5lniA-67" value="+ crear_lista_recomendadas()" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
+          <mxGeometry y="190" width="263.5" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="n-AFm8av6x-7B9_5lniA-64" value="- cargar_recomendadas_segun_puntaje()" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
+          <mxGeometry y="216" width="263.5" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="n-AFm8av6x-7B9_5lniA-65" value="- pelicula_es_recomendada(Pelicula*)" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
+          <mxGeometry y="242" width="263.5" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="n-AFm8av6x-7B9_5lniA-60" value="- comparar_peliculas(Pelicula*, Pelicula*) : bool" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
+          <mxGeometry y="268" width="263.5" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="n-AFm8av6x-7B9_5lniA-63" value="- verificar_memoria_liberada()" style="text;strokeColor=none;fillColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-55" vertex="1">
+          <mxGeometry y="294" width="263.5" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="n-AFm8av6x-7B9_5lniA-44" value="Memoria_liberada" style="swimlane;fontStyle=3;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+          <mxGeometry y="487" width="140" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="n-AFm8av6x-7B9_5lniA-51" value="+ what() : const char*" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="n-AFm8av6x-7B9_5lniA-44" vertex="1">
+          <mxGeometry y="26" width="140" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="KtmQiHUGMBJBXZ_31D4n-3" value="" style="edgeStyle=none;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;strokeColor=#000000;exitX=1.012;exitY=0.308;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="n-AFm8av6x-7B9_5lniA-51" target="n-AFm8av6x-7B9_5lniA-62">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
