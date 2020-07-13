@@ -6,12 +6,10 @@
 
 using namespace std;
 
-// Se define la clase Pelicula
 class Pelicula {
 
 private:
-
-    // atributos
+    //Atributos
     string nombre;
     string genero;
     string director;
@@ -19,84 +17,37 @@ private:
     Lista<string> *elenco;
 
 public:
-
-    /*
-    metodo constructor
-    PRE: ---
-    POST: crea un objeto de tipo Pelicula vacío
-    */
-    //Pelicula();
-
-    /*
-    metodo constructor (sobrecarga)
-    PRE: ---
-    POST: crea un objeto de tipo Pelicula
-    */
+    //Metodos
+    //PRE: -
+    //POST: Crea un objeto de tipo Pelicula y le asigna los valores pasados por parametro a los atributos correspondientes
     Pelicula(string nombre, string genero, string director, unsigned puntaje, Lista<string> *elenco);
 
-    /*
-    metodo agregar_actor_o_actriz
-    PRE: el objeto de tipo Pelicula fue creado
-    POST: agrega un actor o actriz al listado del elenco
-
-    void agregar_actor_o_actriz(string nombre_actor_o_actriz);
-    */
-
-    /*
-    metodo obtener_nombre
-    PRE: ---
-    POST: devuelve el nombre de la pelicula
-    */
-    string obtener_nombre();
-
-    /*
-    metodo obtener_genero
-    PRE: ---
-    POST: devuelve el genero de la pelicula
-    */
+    //PRE: -
+    //POST: Devuelve el genero de la pelicula
     string obtener_genero();
 
-    /*
-    metodo obtener_director
-    PRE: ---
-    POST: devuelve el nombre del director de la pelicula
-    */
+    //PRE: -
+    //POST: Devuelve el nombre del director de la pelicula
     string obtener_director();
 
-    /*
-    metodo obtener_puntaje
-    PRE: ---
-    POST: devuelve el puntaje de la pelicula
-    */
+    //PRE: -
+    //POST: Devuelve el puntaje de la pelicula
     unsigned obtener_puntaje();
 
-    /*
-    metodo obtener_elenco
-    PRE: ---
-    POST: muestra por pantalla el listado del elenco
-    */
+    //PRE: -
+    //POST: Muestra por pantalla el listado del elenco
     Lista<string> *obtener_elenco();
 
-    /*
-    metodo cantidad_actores
-    PRE: ---
-    POST: devuelve la cantidad de actores de la pelicula
-    */
+    //PRE: -
+    //POST: Devuelve la cantidad de actores de la pelicula
     unsigned cantidad_actores();
 
-    /*
-    metodo mostrar_pelicula
-    PRE: el objeto de tipo Pelicula fue creado
-    POST: muestra por pantalla los distintos atributos correspondientes a la pelicula
-    */
+    //PRE: -
+    //POST: Muestra por pantalla los atributos correspondientes a la pelicula
     void mostrar_pelicula();
 
-    /*
-    metodo destructor
-    PRE: el objeto de tipo Pelicula fue creado
-    POST: elimina el objeto de tipo Pelicula. Libera la memoria que se usa
-    para elenco, los demás atributos están en el stack
-    */
+    //PRE: -
+    //POST: Elimina el objeto de tipo Pelicula. Libera la memoria que se usa para elenco, los demás atributos están en el stack
     ~Pelicula();
 };
 
