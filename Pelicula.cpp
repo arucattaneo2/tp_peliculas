@@ -1,30 +1,12 @@
 #include <iostream>
 #include "Pelicula.h"
 
-/*
-Pelicula::Pelicula() {
-    this->nombre = "";
-    this->genero = "";
-    this->director = "";
-    this->puntaje = 0;
-    this->elenco = nullptr;
-}
-*/
 Pelicula::Pelicula(string nombre, string genero, string director, unsigned puntaje, Lista<string> *elenco) {
     this->nombre = nombre;
     this->genero = genero;
     this->director = director;
     this->puntaje = puntaje;
     this->elenco = elenco;
-}
-
-/*
-void Pelicula::agregar_actor_o_actriz(string nombre_actor_o_actriz){
-	elenco.alta(nombre_actor_o_actriz);
-}
-*/
-string Pelicula::obtener_nombre() {
-    return nombre;
 }
 
 string Pelicula::obtener_genero() {
@@ -48,18 +30,17 @@ unsigned Pelicula::cantidad_actores() {
 }
 
 void Pelicula::mostrar_pelicula() {
-    cout << "#############################################################\n" << endl;
     cout << "Pelicula: " << nombre << endl;
     cout << "Genero: " << genero << endl;
     cout << "Director/a: " << director << endl;
     cout << "Puntaje: " << puntaje << endl;
-    cout << "Elenco: " << endl;
+    cout << "Elenco: ";
 
-    for (unsigned i = 1; i <= elenco->obtener_tamanio(); i++) {
-        cout << '\n' << elenco->obtener_dato(i) << endl;
+    for (int i = 1; i <= elenco->obtener_tamanio(); i++) {
+        cout << elenco->obtener_dato(i) << " ";
     }
 
-    cout << "#############################################################" << endl;
+    cout << "\n-------------------------------------------------------------\n";
 }
 
 Pelicula::~Pelicula() {
