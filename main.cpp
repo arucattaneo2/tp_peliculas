@@ -8,6 +8,7 @@ using namespace std;
 
 int main(){
 
+	system("clear");
     Recomendaciones recomendaciones;
     recomendaciones.cargar_datos(PELICULAS_VISTAS, PELICULAS_NO_VISTAS);
     recomendaciones.crear_lista_recomendadas();
