@@ -36,7 +36,7 @@ void Pelicula::mostrar_pelicula() {
     cout << "Puntaje: " << puntaje << endl;
     cout << "Elenco: ";
 
-    for (int i = 1; i <= elenco->obtener_tamanio(); i++) {
+    for (unsigned i = 1; i <= elenco->obtener_tamanio(); i++) {
         cout << elenco->obtener_dato(i) << " ";
     }
 

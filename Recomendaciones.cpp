@@ -55,7 +55,7 @@ void Recomendaciones::crear_lista_recomendadas() {
         cargar_recomendadas_segun_puntaje();
 
     else {
-        for (int i = 1; i <= (lista_no_vistas->obtener_tamanio()); i++) {
+        for (unsigned i = 1; i <= (lista_no_vistas->obtener_tamanio()); i++) {
             Pelicula *pelicula_no_vista = lista_no_vistas->obtener_dato(i);
             if (pelicula_es_recomendada(pelicula_no_vista))
                 lista_recomendadas->alta(pelicula_no_vista);
@@ -64,7 +64,7 @@ void Recomendaciones::crear_lista_recomendadas() {
 }
 
 void Recomendaciones::cargar_recomendadas_segun_puntaje() {
-    for (int i = 1; i <= (lista_no_vistas->obtener_tamanio()); i++) {
+    for (unsigned i = 1; i <= (lista_no_vistas->obtener_tamanio()); i++) {
         Pelicula *pelicula_no_vista = lista_no_vistas->obtener_dato(i);
         if (puntaje_suficiente(pelicula_no_vista))
             lista_recomendadas->alta(pelicula_no_vista);
@@ -72,7 +72,7 @@ void Recomendaciones::cargar_recomendadas_segun_puntaje() {
 }
 
 bool Recomendaciones::pelicula_es_recomendada(Pelicula *pelicula_no_vista) {
-    for (int i = 1; i <= (lista_vistas->obtener_tamanio()); i++) {
+    for (unsigned i = 1; i <= (lista_vistas->obtener_tamanio()); i++) {
         Pelicula *pelicula_vista = lista_vistas->obtener_dato(i);
         if (comparar_peliculas(pelicula_no_vista, pelicula_vista))
             return true;
@@ -81,10 +81,10 @@ bool Recomendaciones::pelicula_es_recomendada(Pelicula *pelicula_no_vista) {
 }
 
 bool Recomendaciones::comparar_peliculas(Pelicula *pelicula_no_vista, Pelicula *pelicula_vista) {
-    return coincidencia_genero(pelicula_no_vista, pelicula_vista) &&
-           (coincidencia_director(pelicula_no_vista, pelicula_vista) ||
+    return (coincidencia_genero(pelicula_no_vista, pelicula_vista)) &&
+           ((coincidencia_director(pelicula_no_vista, pelicula_vista) ||
             coincidencia_actores(pelicula_no_vista, pelicula_vista)) ||
-           puntaje_suficiente(pelicula_no_vista);
+           puntaje_suficiente(pelicula_no_vista));
 }
 
 bool Recomendaciones::coincidencia_genero(Pelicula *pelicula_no_vista, Pelicula *pelicula_vista) {
@@ -96,10 +96,10 @@ bool Recomendaciones::coincidencia_director(Pelicula *pelicula_no_vista, Pelicul
 }
 
 bool Recomendaciones::coincidencia_actores(Pelicula *pelicula_no_vista, Pelicula *pelicula_vista) {
-    for (int i = 1; i <= (pelicula_vista->cantidad_actores()); i++) {
+    for (unsigned i = 1; i <= (pelicula_vista->cantidad_actores()); i++) {
         string actor_pelicula_vista = pelicula_vista->obtener_elenco()->obtener_dato(i);
 
-        for (int j = 1; j <= pelicula_no_vista->cantidad_actores(); j++) {
+        for (unsigned j = 1; j <= pelicula_no_vista->cantidad_actores(); j++) {
             string actor_pelicula_no_vista = pelicula_no_vista->obtener_elenco()->obtener_dato(j);
 
             if (actor_pelicula_no_vista == actor_pelicula_vista) {
